@@ -1,0 +1,227 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Bebas+Neue&family=Indie+Flower&family=Solitreo&display=swap');
+
+@font-face {
+    font-family: 'Android';
+    src:url('recursos/fontes/idroid.otf') format('opentype');
+    font-weight: normal;
+
+}
+
+*{ /*Seletor Global*/
+    padding:0px;
+    margin:0px;
+}
+
+:root { /*Raiz da arvore do documento; Todo documento tem; Toda variável no CSS começa com "--"*/
+--cor0:#c5ebd6;
+--cor1:#83e1ad;
+--cor2:#3ddc84;
+--cor3:#2fa866;
+--cor4:#1a5c37;
+--cor5:#063d1e;
+
+--fonte-padrao:arial, Verdana, Helvetica, sans-serif;
+--font-destaque:'Bebas Neue', cursive; /*Essa informação foi pegada no google-fonts*/
+--font-android:'Android', cursive; /*A "cursive" é a fonte genérica, caso a fonte android não sirva*/
+
+}
+
+body {
+    background-color:var(--cor0);
+    font-family: var(--font-padrão);
+
+}
+
+main p /*Nessa configuração, tudo que estiver dentro de main e for parágrafo, vai sofrer essas configurações*/{
+    text-align: justify; /*Faz ocupar a caixa até o fim*/
+    margin: 12px 10px 12px 6px;
+    text-indent: 20px; /*Indentação da do parágrafo*/ 
+    line-height: 20px; /*Espaço entre as linhas*/
+}
+
+
+span {
+    color:black;
+    font-weight: bold;
+
+}
+
+header {
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor5));
+    text-align: center;
+    min-height: 150px;
+}
+
+header > h1 {
+    color:white;
+    font-family:var(--font-destaque);
+    font-size:3em;
+    padding-top:30px;
+    text-shadow:2px 3px 3px rgba(0, 0, 0, 0.473);
+}
+
+header > p {
+    color:white;
+    font-family:var(--font-padrão);
+    font-size:1.2em;
+    /*Para quebrar a linha*/
+    max-width: 500px; /*Ao fazer isso, o parágrafo vira um bloco. Com isso, as propriedades dos blocos podem ser utilizadas, como o "margin:auto;"*/
+    margin:auto;
+    /*Issos serve para, quando a tela for diminuída, o texto não fique muito colocado nas bordas*/
+    padding-left: 10px;
+    padding-right: 10px; 
+    text-shadow:2px 3px 3px rgba(0, 0, 0, 0.473);
+}
+
+nav {
+    background-color: var(--cor5);
+    padding:10px;
+}
+
+nav > a {
+    color:white;
+    padding:10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav > a:hover {
+    border-radius:5px;
+    background-color: var(--cor4);
+    color:rgb(235, 7, 7);
+    text-decoration: underline;
+    transition: 0.6s; /*  esse aqui que é o pulo do gato, que pode ser utilizado em outras situações  */
+
+
+}
+
+main {
+    min-width: 500px;
+    max-width:600px;
+    background-color: white;
+    margin:auto;
+    margin-bottom: 30px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.479);
+    /*As bordas precisam ser configuradas manualmente para que não coloque bordas em todas as extremidades*/
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+
+}
+
+
+main a {
+    border-radius: 3px;
+    color: rgba(1, 77, 1, 0.603);
+    font-weight: bold;
+    text-decoration: underline;
+
+
+}
+
+p > a:hover {
+    color:red;
+    transition: 0.3s;
+}
+
+article > img {
+        width:100%;
+}
+
+picture > img {
+    width: 100%;
+}
+
+.bug-pq {
+    width: 50%;
+    /*Por padrão, uma imagem não é um block. Precisamos dar um display:block*/
+    display:block;
+    margin:auto; 
+
+}
+
+
+article > h1 {
+    color: var(--cor5);
+    font-family:var(--font-android);
+    margin-left: 10px;
+
+
+}
+
+article > h2 {
+    font-family:var(--font-android);
+    margin-left:10px;
+    font-size:1.3em;
+    color: var(--cor3);
+    background-image: linear-gradient(to right, var(--cor1), transparent);
+    padding-left: 5px;
+
+}
+
+.video {
+    background-color: var(--cor5);
+    margin-bottom: 20px;
+
+    padding-bottom: 59%; /*Se eu não colocar isso, a div fica "espremida"*/
+
+    position: relative;
+    
+
+}
+
+main iframe {
+    padding:10px;
+
+    position:absolute; /*Quando coloca posição absoluta, posso mexer com "top", "left", width, height*/
+
+    top:2%;
+    left:3%;
+    width: 89%;
+    height: 85%;
+
+}
+
+h3 {
+    padding-left:25px;
+
+}
+
+
+aside {
+    background-color: var(--cor1);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.466);
+    margin:20px;
+
+}
+
+aside > h3 {
+    background-color: var(--cor4);
+    color:white;
+    padding:5px;
+    margin:-10px -10px 0px -10px; /*O "-10px" faz a margin o contrário*/
+    border-radius: 5px 5px 0px 0px;
+}
+
+aside > ul {
+    list-style-type: '\2714\00A0\00A0'; /*Pesquisa na emojipidea. "\00A0" é o espaço. Não é compatível com todo navegador*/
+    list-style-position: inside;
+    columns:2;
+
+}
+
+#p-final {
+    padding-bottom:15px;
+
+}
+
+footer {
+    background-color: var(--cor5);
+    color:white;
+    text-align: center;
+    font-size:0.8em;
+    padding:5px;
+}
